@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "about": "Über uns",
+    "services": "Leistungen",
+    "appointment": "Termin",
+    "contact": "Kontakt"
+  },
+  "form": {
+    "name": "Name",
+    "email": "E-Mail",
+    "insurance": "Versicherungsnummer",
+    "submit": "Termin buchen"
+  },
+  "cookie": "Diese Webseite verwendet Cookies, um Ihnen ein optimales Erlebnis zu bieten.",
+  "privacy": "Datenschutz",
+  "showMore": "Mehr anzeigen"
+}

@@ -1,0 +1,44 @@
+
+{
+  "nav": {
+    "about": "About Us",
+    "services": "Services",
+    "appointment": "Appointment",
+    "contact": "Contact"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "insurance": "Insurance Number",
+    "submit": "Send",
+    "book": "Book Appointment"
+  },
+  "cookie": "This website uses cookies to ensure the best experience.",
+  "privacy": "Privacy Policy",
+  "showMore": "Read more",
+  "footer": {
+    "rights": "All rights reserved.",
+    "dataProtection": "Data Protection"
+  },
+  "header": {
+    "welcome": "Welcome to Ordination Med Dörr",
+    "cta": "Schedule an appointment now"
+  },
+  "services": {
+    "vitaminC": "High-dose Vitamin C Infusion",
+    "acupuncture": "Acupuncture Therapy",
+    "cardiology": "Cardiology",
+    "nephrology": "Nephrology",
+    "painTherapy": "Pain Therapy",
+    "internalMedicine": "Internal Medicine"
+  },
+  "doctors": {
+    "katharina": "Dr. Katharina Dörr",
+    "claudius": "DDr. Claudius Dörr MBA"
+  },
+  "appointmentForm": {
+    "title": "Appointment Booking",
+    "success": "Your appointment request has been submitted successfully.",
+    "error": "Please complete all required fields."
+  }
+}

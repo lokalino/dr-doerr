@@ -1,0 +1,44 @@
+
+{
+  "nav": {
+    "about": "O nas",
+    "services": "Usługi",
+    "appointment": "Wizyta",
+    "contact": "Kontakt"
+  },
+  "form": {
+    "name": "Imię",
+    "email": "Email",
+    "insurance": "Numer ubezpieczenia",
+    "submit": "Wyślij",
+    "book": "Umów wizytę"
+  },
+  "cookie": "Ta strona korzysta z plików cookie, aby zapewnić najlepsze doświadczenie.",
+  "privacy": "Polityka prywatności",
+  "showMore": "Czytaj więcej",
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "dataProtection": "Ochrona danych"
+  },
+  "header": {
+    "welcome": "Witamy w Ordynacji Med Dörr",
+    "cta": "Umów się na wizytę teraz"
+  },
+  "services": {
+    "vitaminC": "Wlew wysokiej dawki witaminy C",
+    "acupuncture": "Terapia akupunkturą",
+    "cardiology": "Kardiologia",
+    "nephrology": "Nefrologia",
+    "painTherapy": "Terapia bólu",
+    "internalMedicine": "Medycyna wewnętrzna"
+  },
+  "doctors": {
+    "katharina": "Dr Katharina Dörr",
+    "claudius": "DDr Claudius Dörr MBA"
+  },
+  "appointmentForm": {
+    "title": "Rejestracja wizyty",
+    "success": "Twoje zgłoszenie wizyty zostało pomyślnie przesłane.",
+    "error": "Proszę uzupełnić wszystkie wymagane pola."
+  }
+}
