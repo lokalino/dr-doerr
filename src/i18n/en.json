@@ -4,18 +4,22 @@
     "about": "About Us",
     "services": "Services",
     "appointment": "Appointment",
-    "contact": "Contact"
+    "contact": "Contact",
+    "testimonials": "Testimonials"
   },
   "form": {
     "name": "Name",
     "email": "Email",
     "insurance": "Insurance Number",
     "submit": "Send",
-    "book": "Book Appointment"
+    "book": "Book Appointment",
+   
+    "success": "Appointment successfully booked!",
+    "missing": "Please fill out all required fields."
   },
   "cookie": "This website uses cookies to ensure the best experience.",
   "privacy": "Privacy Policy",
-  "showMore": "Read more",
+  
   "footer": {
     "rights": "All rights reserved.",
     "dataProtection": "Data Protection"
@@ -40,5 +44,8 @@
     "title": "Appointment Booking",
     "success": "Your appointment request has been submitted successfully.",
     "error": "Please complete all required fields."
-  }
+  },
+  "showMore": "Read more"
 }
+
+

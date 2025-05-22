@@ -4,14 +4,22 @@
     "services": "Leistungen",
     "appointment": "Termin",
     "contact": "Kontakt"
+    ,
+    "testimonials": "Bewertungen"
   },
   "form": {
+    "chooseDoctor": "Arzt wählen",
+    "chooseDate": "Datum wählen",
+    "chooseTime": "Uhrzeit wählen",
     "name": "Name",
     "email": "E-Mail",
     "insurance": "Versicherungsnummer",
-    "submit": "Termin buchen"
+    "submit": "Absenden",
+    "success": "Termin erfolgreich gebucht!",
+    "missing": "Bitte füllen Sie alle Pflichtfelder aus."
   },
   "cookie": "Diese Webseite verwendet Cookies, um Ihnen ein optimales Erlebnis zu bieten.",
   "privacy": "Datenschutz",
+ 
   "showMore": "Mehr anzeigen"
-}
+  }

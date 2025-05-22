@@ -4,15 +4,15 @@ const Testimonials = () => (
       <div className="testimonial-list">
         <blockquote>
           “Einfühlsam, kompetent, und wirklich menschlich – endlich ernst genommen!”
-          <footer>– Patientin A</footer>
+          <footer>– Helmut A.</footer>
         </blockquote>
         <blockquote>
           “Ich habe sofort Vertrauen gefasst – top Betreuung und kurze Wartezeit.”
-          <footer>– Patient B</footer>
+          <footer>– Olga S.</footer>
         </blockquote>
         <blockquote>
           “Moderne Praxis, freundliche Ärzt:innen – ich komme gerne wieder!”
-          <footer>– Patientin C</footer>
+          <footer>– Helga R.</footer>
         </blockquote>
       </div>
     </section>

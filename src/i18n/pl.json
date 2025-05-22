@@ -4,6 +4,7 @@
     "about": "O nas",
     "services": "Usługi",
     "appointment": "Wizyta",
+    "testimonials": "Referencje",
     "contact": "Kontakt"
   },
   "form": {
@@ -33,6 +34,15 @@
     "internalMedicine": "Medycyna wewnętrzna"
   },
   "doctors": {
+    "chooseDoctor": "Wybierz lekarza",
+    "chooseDate": "Wybierz datę",
+    "chooseTime": "Wybierz godzinę",
+    "name": "Imię i nazwisko",
+    "email": "E-mail",
+    "insurance": "Numer ubezpieczenia",
+    "submit": "Wyślij",
+    "success": "Wizyta została pomyślnie zarezerwowana!",
+    "missing": "Wypełnij wszystkie wymagane pola.",
     "katharina": "Dr Katharina Dörr",
     "claudius": "DDr Claudius Dörr MBA"
   },

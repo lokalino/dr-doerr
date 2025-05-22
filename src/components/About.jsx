@@ -56,7 +56,7 @@ const About = () => {
                 onClick={() => setFormDoctorId(prev => prev === doc.id ? null : doc.id)}
                 className="btn-primary"
               >
-                {t('form.book')}
+                {t('termin')}
               </button>
             </div>
 
