@@ -429,3 +429,54 @@ footer a {
     margin: 0.5rem 0;
   }
 }
+.service-card.expanded {
+  background-color: #e8f0ff;
+  border: 2px solid #2b3990;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+.service-card h3 span {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.service-card.expanded h3 span {
+  transform: rotate(180deg);
+}
+.service-card h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.service-card.expanded .arrow-icon {
+  transform: rotate(180deg);
+}
+.service-card h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.service-card.expanded .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.service-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.service-card.expanded .service-description {
+  max-height: 500px; 
+}

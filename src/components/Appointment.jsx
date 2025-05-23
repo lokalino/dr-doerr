@@ -8,7 +8,7 @@ const Appointment = () => {
   const [selectedDoctor, setSelectedDoctor] = useState('')
   const [selectedDate, setSelectedDate] = useState(null)
   const [selectedTime, setSelectedTime] = useState('')
-  const [formData, setFormData] = useState({ name: '', email: '', insurance: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', insurance: '', phone: '' })
   const [errors, setErrors] = useState({})
 
   const availableTimes = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00']
@@ -25,6 +25,7 @@ const Appointment = () => {
     if (!selectedTime) newErrors.time = t('form.chooseTime') || 'Choose a time'
     if (!formData.name) newErrors.name = t('form.name') || 'Name is required'
     if (!formData.email) newErrors.email = t('form.email') || 'Email is required'
+    if (!formData.phone) newErrors.phone = t('form.phone') || 'Phone number is required'
     if (!formData.insurance) newErrors.insurance = t('form.insurance') || 'Insurance is required'
     return newErrors
   }
@@ -95,6 +96,15 @@ const Appointment = () => {
           onChange={handleChange}
         />
         {errors.email && <small style={{ color: 'red' }}>{errors.email}</small>}
+
+        <input
+          type="text"
+          name="phone"
+          placeholder={t('phone') || 'Phone'}
+          value={formData.phone}
+          onChange={handleChange}
+        />
+        {errors.phone && <small style={{ color: 'red' }}>{errors.phone}</small>}
 
         <input
           type="text"
