@@ -480,3 +480,113 @@ footer a {
 .service-card.expanded .service-description {
   max-height: 500px; 
 }
+.logo img {
+  vertical-align: middle;
+  height: 40px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-image img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.modal-image {
+  animation: zoomFade 0.4s ease;
+}
+
+.modal-image img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+@keyframes zoomFade {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.doctor-image-container {
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.doctor-image-container img {
+  transition: transform 0.3s ease;
+  border-radius: 100px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.doctor-image-container.zoomed img {
+  transform: scale(2.5);
+  border-radius: 12px;
+  z-index: 5;
+  position: relative;
+}
+.image-modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.image-modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  margin-bottom: 1rem;
+}
+
+.image-modal-caption {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}

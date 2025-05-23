@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import claudiusImg from '../assets/claudius.jpg'
 import katharinaImg from '../assets/katharina.jpg'
 import DoctorModal from './DoctorModal'
@@ -14,6 +14,7 @@ const About = () => {
   const [formDoctorId, setFormDoctorId] = useState(null)
   const [selectedDate, setSelectedDate] = useState(null)
   const [selectedTime, setSelectedTime] = useState(null)
+  const [enlargedImg, setEnlargedImg] = useState(null)
   const { t } = useTranslation()
 
   const doctors = [
@@ -33,6 +34,16 @@ const About = () => {
     }
   ]
 
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === 'Escape') {
+        setEnlargedImg(null)
+      }
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [])
+
   return (
     <section id="about" data-aos="fade-up">
       <h2>{t('nav.about')}</h2>
@@ -45,7 +56,12 @@ const About = () => {
             data-aos-delay={index * 150}
             data-aos-offset="100"
           >
-            <img src={doc.img} alt={doc.name} />
+            <img
+              src={doc.img}
+              alt={doc.name}
+              onClick={() => setEnlargedImg({ src: doc.img, name: doc.name })}
+              style={{ cursor: 'zoom-in' }}
+            />
             <h3>{doc.name}</h3>
             <p>{doc.short}</p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
@@ -105,6 +121,14 @@ const About = () => {
           content={doc.bio[i18n.language] || doc.bio.de}
         />
       ))}
+
+      {enlargedImg && (
+        <div className="image-modal-overlay" onClick={() => setEnlargedImg(null)}>
+          <button className="image-modal-close" onClick={() => setEnlargedImg(null)}>✕</button>
+          <img src={enlargedImg.src} alt="doctor large" className="image-modal-content" />
+          <p className="image-modal-caption">{enlargedImg.name}</p>
+        </div>
+      )}
     </section>
   )
 }

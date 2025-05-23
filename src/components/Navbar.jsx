@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import logo from '../assets/logo1.png'
+
 
 const Navbar = () => {
   const [lang, setLang] = useState('de')
@@ -14,7 +16,9 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">Med Dörr</div>
+      <div className="logo">
+  <img src={logo} alt="Med Dörr Logo" style={{ height: '100px' }} />
+</div>
 
       <button
         className={`menu-toggle ${menuOpen ? 'open' : ''}`}
