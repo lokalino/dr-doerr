@@ -1,6 +1,6 @@
-
 {
   "nav": {
+    "team": "Our Team",
     "about": "About Us",
     "services": "Services",
     "appointment": "Appointment",
@@ -10,16 +10,18 @@
   "form": {
     "name": "Name",
     "email": "Email",
+    "phone": "Phone",
     "insurance": "Insurance Number",
     "submit": "Send",
     "book": "Book Appointment",
-   
     "success": "Appointment successfully booked!",
-    "missing": "Please fill out all required fields."
+    "missing": "Please fill out all required fields.",
+    "message": "Message",
+    "noEmailClient": "If your email did not open, please send your request manually to ordination@example.com."
   },
   "cookie": "This website uses cookies to ensure the best experience.",
   "privacy": "Privacy Policy",
-  
+  "showMore": "Read more",
   "footer": {
     "rights": "All rights reserved.",
     "dataProtection": "Data Protection"
@@ -44,8 +46,5 @@
     "title": "Appointment Booking",
     "success": "Your appointment request has been submitted successfully.",
     "error": "Please complete all required fields."
-  },
-  "showMore": "Read more"
+  }
 }
-
-

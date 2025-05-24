@@ -19,7 +19,7 @@ const Contact = () => {
           className="btn-primary"
           style={{ marginTop: '1rem', display: 'inline-block' }}
         >
-          {t('form.contactEmail') || 'E-Mail schreiben'}
+          {t('contactEmail') || 'E-Mail schreiben'}
         </a>
       </div>
 

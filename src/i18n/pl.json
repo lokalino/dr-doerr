@@ -1,6 +1,6 @@
-
 {
   "nav": {
+    "team": "Nasz Zespół",
     "about": "O nas",
     "services": "Usługi",
     "appointment": "Wizyta",
@@ -10,9 +10,14 @@
   "form": {
     "name": "Imię",
     "email": "Email",
+    "phone": "Telefon",
     "insurance": "Numer ubezpieczenia",
     "submit": "Wyślij",
-    "book": "Umów wizytę"
+    "book": "Umów wizytę",
+    "success": "Wizyta została pomyślnie zarezerwowana!",
+    "missing": "Wypełnij wszystkie wymagane pola.",
+    "message": "Wiadomość",
+    "noEmailClient": "Jeśli poczta się nie otworzyła, wyślij zgłoszenie ręcznie na adres ordination@example.com."
   },
   "cookie": "Ta strona korzysta z plików cookie, aby zapewnić najlepsze doświadczenie.",
   "privacy": "Polityka prywatności",
@@ -26,7 +31,7 @@
     "cta": "Umów się na wizytę teraz"
   },
   "services": {
-    "vitaminC": "Wlew wysokiej dawki witaminy C",
+    "vitaminC": "Wlew witaminy C w dużej dawce",
     "acupuncture": "Terapia akupunkturą",
     "cardiology": "Kardiologia",
     "nephrology": "Nefrologia",
@@ -34,21 +39,12 @@
     "internalMedicine": "Medycyna wewnętrzna"
   },
   "doctors": {
-    "chooseDoctor": "Wybierz lekarza",
-    "chooseDate": "Wybierz datę",
-    "chooseTime": "Wybierz godzinę",
-    "name": "Imię i nazwisko",
-    "email": "E-mail",
-    "insurance": "Numer ubezpieczenia",
-    "submit": "Wyślij",
-    "success": "Wizyta została pomyślnie zarezerwowana!",
-    "missing": "Wypełnij wszystkie wymagane pola.",
     "katharina": "Dr Katharina Dörr",
     "claudius": "DDr Claudius Dörr MBA"
   },
   "appointmentForm": {
     "title": "Rejestracja wizyty",
-    "success": "Twoje zgłoszenie wizyty zostało pomyślnie przesłane.",
+    "success": "Twoje zgłoszenie zostało pomyślnie przesłane.",
     "error": "Proszę uzupełnić wszystkie wymagane pola."
   }
 }

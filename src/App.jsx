@@ -7,11 +7,11 @@ import Navbar from './components/Navbar'
 import About from './components/About'
 import Services from './components/Services'
 import Testimonials from './components/Testimonials'
-import Appointment from './components/Appointment'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import CookieConsent from 'react-cookie-consent'
+import SimpleAppointmentForm from './components/SimpleAppointmentForm'
 
 function App() {
   useEffect(() => {
@@ -26,21 +26,28 @@ function App() {
         <div data-aos="fade-up">
           <About />
         </div>
+
         <div data-aos="flip-up">
           <Services />
         </div>
+
         <div data-aos="fade-left">
           <Testimonials />
         </div>
-        <div data-aos="zoom-in">
-          <Appointment />
+
+        <div data-aos="zoom-in" style={{ maxWidth: 700, margin: '0 auto', padding: '2rem' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '1rem' }}>Kontaktieren Sie uns</h2>
+          <SimpleAppointmentForm />
         </div>
+
         <div data-aos="fade-up">
           <Contact />
         </div>
       </main>
+
       <Footer />
       <ScrollToTop />
+      
       <CookieConsent
         location="bottom"
         buttonText="OK"

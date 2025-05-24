@@ -4,49 +4,44 @@ import katharinaImg from '../assets/katharina.jpg'
 import DoctorModal from './DoctorModal'
 import claudiusBio from '../data/claudiusBio'
 import katharinaBio from '../data/katharinaBio'
+import SimpleAppointmentForm from './SimpleAppointmentForm'
 import { useTranslation } from 'react-i18next'
 import i18n from '../i18n'
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
 
 const About = () => {
   const [openModal, setOpenModal] = useState(null)
   const [formDoctorId, setFormDoctorId] = useState(null)
-  const [selectedDate, setSelectedDate] = useState(null)
-  const [selectedTime, setSelectedTime] = useState(null)
   const [enlargedImg, setEnlargedImg] = useState(null)
   const { t } = useTranslation()
 
   const doctors = [
+    {
+      id: 'katharina',
+      name: 'Priv.-Doz. DDr. Katharina Dörr MBA',
+      short: 'Fachärztin für Innere Medizin, Kardiologie & Nephrologie.',
+      img: katharinaImg,
+      bio: katharinaBio
+    },
     {
       id: 'claudius',
       name: 'DDr. Claudius Dörr MBA',
       short: 'Facharzt für Anästhesiologie, Intensivmedizin & Schmerztherapie.',
       img: claudiusImg,
       bio: claudiusBio
-    },
-    {
-      id: 'katharina',
-      name: 'Dr. Katharina Dörr',
-      short: 'Fachärztin für Innere Medizin, Kardiologie & Nephrologie.',
-      img: katharinaImg,
-      bio: katharinaBio
     }
   ]
 
   useEffect(() => {
     const handleKey = (e) => {
-      if (e.key === 'Escape') {
-        setEnlargedImg(null)
-      }
+      if (e.key === 'Escape') setEnlargedImg(null)
     }
     window.addEventListener('keydown', handleKey)
     return () => window.removeEventListener('keydown', handleKey)
   }, [])
 
   return (
-    <section id="about" data-aos="fade-up">
-      <h2>{t('nav.about')}</h2>
+    <section id="team" data-aos="fade-up">
+      <h2>{t('nav.team')}</h2>
       <div className="about-grid">
         {doctors.map((doc, index) => (
           <div
@@ -69,44 +64,23 @@ const About = () => {
                 {t('showMore')}
               </button>
               <button
-                onClick={() => setFormDoctorId(prev => prev === doc.id ? null : doc.id)}
+                onClick={() => {
+                  setFormDoctorId(prev => prev === doc.id ? null : doc.id)
+                  setTimeout(() => {
+                    const el = document.getElementById(`form-${doc.id}`)
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                  }, 100)
+                }}
                 className="btn-primary"
               >
-                {t('termin')}
+                {formDoctorId === doc.id ? 'Verstecken' : t('form.book')}
               </button>
             </div>
 
             {formDoctorId === doc.id && (
-              <form className="appointment-form-inline">
-                <input type="text" placeholder={t('form.name')} required />
-                <input type="email" placeholder={t('form.email')} required />
-                <input type="text" placeholder={t('form.insurance')} required />
-
-                <DatePicker
-                  selected={selectedDate}
-                  onChange={(date) => setSelectedDate(date)}
-                  placeholderText="Wähle ein Datum"
-                  dateFormat="dd.MM.yyyy"
-                  required
-                />
-
-                {selectedDate && (
-                  <select
-                    value={selectedTime || ''}
-                    onChange={(e) => setSelectedTime(e.target.value)}
-                    required
-                  >
-                    <option value="">Uhrzeit wählen</option>
-                    <option>09:00</option>
-                    <option>10:00</option>
-                    <option>11:30</option>
-                    <option>13:00</option>
-                    <option>15:00</option>
-                  </select>
-                )}
-
-                <button type="submit">{t('form.submit')}</button>
-              </form>
+              <div id={`form-${doc.id}`} style={{ marginTop: '1rem' }}>
+                <SimpleAppointmentForm doctorName={doc.name} onSuccess={() => setFormDoctorId(null)} />
+              </div>
             )}
           </div>
         ))}

@@ -1,25 +1,50 @@
 {
   "nav": {
+    "team": "Unser Team",
     "about": "Über uns",
     "services": "Leistungen",
     "appointment": "Termin",
-    "contact": "Kontakt"
-    ,
+    "contact": "Kontakt",
     "testimonials": "Bewertungen"
   },
   "form": {
-    "chooseDoctor": "Arzt wählen",
-    "chooseDate": "Datum wählen",
-    "chooseTime": "Uhrzeit wählen",
     "name": "Name",
     "email": "E-Mail",
+    "phone": "Telefon",
     "insurance": "Versicherungsnummer",
     "submit": "Absenden",
+    "book": "Termin buchen",
     "success": "Termin erfolgreich gebucht!",
-    "missing": "Bitte füllen Sie alle Pflichtfelder aus."
+    "missing": "Bitte füllen Sie alle Pflichtfelder aus.",
+    "message": "Nachricht",
+    "noEmailClient": "Falls sich Ihr E-Mail-Programm nicht geöffnet hat, senden Sie Ihre Anfrage bitte direkt an ordination@example.com."
   },
   "cookie": "Diese Webseite verwendet Cookies, um Ihnen ein optimales Erlebnis zu bieten.",
   "privacy": "Datenschutz",
- 
-  "showMore": "Mehr anzeigen"
+  "showMore": "Mehr anzeigen",
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "dataProtection": "Datenschutz"
+  },
+  "header": {
+    "welcome": "Willkommen bei Ordination Med Dörr",
+    "cta": "Jetzt Termin vereinbaren"
+  },
+  "services": {
+    "vitaminC": "Hochdosis Vitamin-C-Infusion",
+    "acupuncture": "Akupunkturtherapie",
+    "cardiology": "Kardiologie",
+    "nephrology": "Nephrologie",
+    "painTherapy": "Schmerztherapie",
+    "internalMedicine": "Innere Medizin"
+  },
+  "doctors": {
+    "katharina": "Dr. Katharina Dörr",
+    "claudius": "DDr. Claudius Dörr MBA"
+  },
+  "appointmentForm": {
+    "title": "Terminbuchung",
+    "success": "Ihre Terminanfrage wurde erfolgreich übermittelt.",
+    "error": "Bitte alle Pflichtfelder ausfüllen."
   }
+}
