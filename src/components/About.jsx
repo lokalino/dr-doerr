@@ -59,7 +59,8 @@ const About = () => {
             />
             <h3>{doc.name}</h3>
             <p>{doc.short}</p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
+
+            <div className="doctor-buttons">
               <button onClick={() => setOpenModal(doc.id)} className="btn-outline">
                 {t('showMore')}
               </button>

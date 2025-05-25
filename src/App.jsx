@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-import Header from './components/Header'
 import Navbar from './components/Navbar'
 import About from './components/About'
 import Services from './components/Services'
@@ -20,61 +19,53 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* <Header />  ← OVO JE UKLONJENO */}
       <Navbar />
       <main>
-  <div data-aos="fade-up">
-    <About />
-  </div>
+        <div data-aos="fade-up">
+          <About />
+        </div>
 
-  <div data-aos="flip-up">
-    <Services />
-  </div>
+        <div data-aos="flip-up">
+          <Services />
+        </div>
 
-  <div data-aos="fade-left">
-    <Testimonials />
-  </div>
+        <div data-aos="fade-left">
+          <Testimonials />
+        </div>
 
-  <div data-aos="zoom-in" style={{ maxWidth: 700, margin: '0 auto', padding: '2rem' }}>
-    <h2 style={{ textAlign: 'center', marginBottom: '1rem' }}>Kontaktieren Sie uns</h2>
-    <SimpleAppointmentForm />
-  </div>
+        <div
+          id="appointment"
+          data-aos="zoom-in"
+          style={{ maxWidth: 500, margin: '0 auto', padding: '1.5rem' }}
+        >
+          <h2 style={{ textAlign: 'center', marginBottom: '1rem' }}>Kontaktieren Sie uns</h2>
+          <SimpleAppointmentForm />
+        </div>
 
-  <div data-aos="fade-up">
-    <Contact />
-  </div>
-</main>
+        <div data-aos="fade-up">
+          <Contact />
+        </div>
+      </main>
 
-{/* Sticky dugme za zakazivanje */}
-<button
-  className="sticky-appointment-btn"
-  onClick={() => document.getElementById("appointment")?.scrollIntoView({ behavior: "smooth" })}
->
-  Zakaži termin
-</button>
-
-<Footer />
-<ScrollToTop />
-<CookieConsent
-  location="bottom"
-  buttonText="OK"
-  cookieName="drdoerrCookie"
-  style={{ background: "#2b3990" }}
-  buttonStyle={{ color: "#fff", backgroundColor: "#4e5ee4", borderRadius: "5px" }}
->
-  Diese Webseite verwendet Cookies, um Ihnen ein optimales Erlebnis zu bieten.
-</CookieConsent>
-
+      <button
+        className="sticky-appointment-btn"
+        onClick={() =>
+          document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' })
+        }
+      >
+        Zakaži termin
+      </button>
 
       <Footer />
       <ScrollToTop />
-      
+
       <CookieConsent
         location="bottom"
         buttonText="OK"
         cookieName="drdoerrCookie"
-        style={{ background: "#2b3990" }}
-        buttonStyle={{ color: "#fff", backgroundColor: "#4e5ee4", borderRadius: "5px" }}
+        style={{ background: '#2b3990' }}
+        buttonStyle={{ color: '#fff', backgroundColor: '#4e5ee4', borderRadius: '5px' }}
       >
         Diese Webseite verwendet Cookies, um Ihnen ein optimales Erlebnis zu bieten.
       </CookieConsent>
