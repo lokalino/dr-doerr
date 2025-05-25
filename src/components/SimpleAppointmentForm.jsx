@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import SuccessModal from './SuccessModal'
+
 
 const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
   const { t } = useTranslation()
@@ -10,6 +12,8 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
   const [fallbackNotice, setFallbackNotice] = useState(false)
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -138,6 +142,8 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
           </p>
         )}
       </form>
+
+<SuccessModal open={showModal} onClose={() => setShowModal(false)} />
 
       <ToastContainer position="bottom-center" autoClose={3000} />
     </>
