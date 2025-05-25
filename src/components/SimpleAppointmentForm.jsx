@@ -4,16 +4,17 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import SuccessModal from './SuccessModal'
 
-
 const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
   const { t } = useTranslation()
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' })
   const [errors, setErrors] = useState({})
-  const [fallbackNotice, setFallbackNotice] = useState(false)
-  const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [showModal, setShowModal] = useState(false)
 
+  const emailMap = {
+    'DDr. Claudius Dörr MBA': 'https://formsubmit.co/claudius@example.com',
+    'Priv.-Doz. DDr. Katharina Dörr MBA': 'https://formsubmit.co/katharina@example.com'
+  }
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -30,40 +31,34 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
     const newErrors = validate()
     if (Object.keys(newErrors).length > 0) {
+      e.preventDefault()
       setErrors(newErrors)
       return
     }
 
-    setLoading(true)
+    setSuccess(true)
+    setShowModal(true)
+    setFormData({ name: '', email: '', phone: '', message: '' })
 
-    const mailBody = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n${doctorName ? `Doctor: ${doctorName}\n` : ''}Message: ${formData.message}`
-    const mailto = `mailto:ordination@example.com?subject=Termin Anfrage - ${formData.name}&body=${encodeURIComponent(mailBody)}`
-    window.location.href = mailto
-
-    setTimeout(() => {
-      setLoading(false)
-      setFallbackNotice(true)
-      setSuccess(true)
-      toast.success(t('form.success') || 'Nachricht gesendet.')
-      setFormData({ name: '', email: '', phone: '', message: '' })
-      setErrors({})
-      if (onSuccess) setTimeout(() => {
+    if (onSuccess) {
+      setTimeout(() => {
         onSuccess()
         const teamSection = document.getElementById('team')
         if (teamSection) {
           teamSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }
       }, 3000)
-    }, 3000)
+    }
   }
 
   return (
     <>
       <form
         onSubmit={handleSubmit}
+        action={emailMap[doctorName] || 'https://formsubmit.co/default@example.com'}
+        method="POST"
         className="form-fade-in"
         style={{
           maxWidth: 500,
@@ -73,6 +68,11 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
           borderRadius: '10px'
         }}
       >
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://klaudiusandkathi.netlify.app/thank-you" />
+        <input type="hidden" name="Doktor" value={doctorName} />
+        <input type="text" name="_honey" style={{ display: 'none' }} />
+
         <input
           type="text"
           name="name"
@@ -116,7 +116,6 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
         {!success && (
           <button
             type="submit"
-            disabled={loading}
             style={{
               backgroundColor: '#007bff',
               color: '#fff',
@@ -124,27 +123,19 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
               border: 'none',
               borderRadius: '8px',
               fontSize: '16px',
-              cursor: loading ? 'not-allowed' : 'pointer',
-              opacity: loading ? 0.7 : 1,
+              cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               gap: '0.5rem'
             }}
           >
-            {loading ? 'Senden...' : t('form.submit')}
+            📧 {t('form.submit')}
           </button>
-        )}
-
-        {fallbackNotice && (
-          <p style={{ color: 'red', marginTop: 12 }}>
-            {t('form.noEmailClient') || 'If your email did not open, please send manually to ordination@example.com.'}
-          </p>
         )}
       </form>
 
-<SuccessModal open={showModal} onClose={() => setShowModal(false)} />
-
+      <SuccessModal open={showModal} onClose={() => setShowModal(false)} />
       <ToastContainer position="bottom-center" autoClose={3000} />
     </>
   )

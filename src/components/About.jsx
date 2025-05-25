@@ -62,7 +62,7 @@ const About = () => {
 
             <div className="doctor-buttons">
               <button onClick={() => setOpenModal(doc.id)} className="btn-outline">
-                {t('showMore')}
+                ℹ️ {t('showMore')}
               </button>
               <button
                 onClick={() => {
@@ -74,7 +74,7 @@ const About = () => {
                 }}
                 className="btn-primary"
               >
-                {formDoctorId === doc.id ? 'Verstecken' : t('form.book')}
+                📅 {formDoctorId === doc.id ? 'Verstecken' : t('form.book')}
               </button>
             </div>
 
