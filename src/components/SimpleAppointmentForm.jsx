@@ -47,7 +47,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
       return
     }
 
-    // Omogući regularan submit ako nema grešaka
+    // Ako nema grešaka, pusti browser da pošalje formu (ne pozivamo e.preventDefault)
     setSuccess(true)
     setShowModal(true)
     setFormData({ name: '', email: '', phone: '', message: '' })
@@ -84,7 +84,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
           type="text"
           name="name"
           placeholder={t('form.name')}
-          value={formData.name || ''}
+          value={formData.name}
           onChange={handleChange}
           style={{ width: '100%', marginBottom: 10, padding: 8 }}
         />
@@ -94,7 +94,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
           type="email"
           name="email"
           placeholder={t('form.email')}
-          value={formData.email || ''}
+          value={formData.email}
           onChange={handleChange}
           style={{ width: '100%', marginBottom: 10, padding: 8 }}
         />
@@ -104,7 +104,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
           type="text"
           name="phone"
           placeholder={t('form.phone')}
-          value={formData.phone || ''}
+          value={formData.phone}
           onChange={handleChange}
           style={{ width: '100%', marginBottom: 10, padding: 8 }}
         />
@@ -113,7 +113,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
         <textarea
           name="message"
           placeholder={t('form.message')}
-          value={formData.message || ''}
+          value={formData.message}
           onChange={handleChange}
           rows="5"
           style={{ width: '100%', marginBottom: 10, padding: 8 }}
