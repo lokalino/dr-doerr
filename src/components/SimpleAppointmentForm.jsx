@@ -6,18 +6,23 @@ import SuccessModal from './SuccessModal'
 
 const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
   const { t } = useTranslation()
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' })
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
   const [errors, setErrors] = useState({})
   const [success, setSuccess] = useState(false)
   const [showModal, setShowModal] = useState(false)
 
   const emailMap = {
-    'DDr. Claudius Dörr MBA': 'https://formsubmit.co/claudius@example.com',
-    'Priv.-Doz. DDr. Katharina Dörr MBA': 'https://formsubmit.co/katharina@example.com'
+    'DDr. Claudius Dörr MBA': 'https://formsubmit.co/dr.claudiusdoerr@gmail.com',
+    'Priv.-Doz. DDr. Katharina Dörr MBA': 'https://formsubmit.co/dr.katharinadoerr@gmail.com'
   }
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setFormData({ ...formData, [e.target.name]: e.target.value || '' })
     setErrors({ ...errors, [e.target.name]: '' })
   }
 
@@ -77,7 +82,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
           type="text"
           name="name"
           placeholder={t('form.name')}
-          value={formData.name}
+          value={formData.name || ''}
           onChange={handleChange}
           style={{ width: '100%', marginBottom: 10, padding: 8 }}
         />
@@ -87,7 +92,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
           type="email"
           name="email"
           placeholder={t('form.email')}
-          value={formData.email}
+          value={formData.email || ''}
           onChange={handleChange}
           style={{ width: '100%', marginBottom: 10, padding: 8 }}
         />
@@ -97,7 +102,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
           type="text"
           name="phone"
           placeholder={t('form.phone')}
-          value={formData.phone}
+          value={formData.phone || ''}
           onChange={handleChange}
           style={{ width: '100%', marginBottom: 10, padding: 8 }}
         />
@@ -106,7 +111,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
         <textarea
           name="message"
           placeholder={t('form.message')}
-          value={formData.message}
+          value={formData.message || ''}
           onChange={handleChange}
           rows="5"
           style={{ width: '100%', marginBottom: 10, padding: 8 }}

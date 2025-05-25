@@ -1,4 +1,15 @@
 {
+  "footer": {
+    "clinicName": "Ordination Med Dörr",
+    "rights": "Alle Rechte vorbehalten.",
+    "dataProtection": "Datenschutz"
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "address": "Adresse",
+    "phone": "Telefon",
+    "email": "E-Mail"
+  },
   "nav": {
     "team": "Unser Team",
     "about": "Über uns",
@@ -22,10 +33,6 @@
   "cookie": "Diese Webseite verwendet Cookies, um Ihnen ein optimales Erlebnis zu bieten.",
   "privacy": "Datenschutz",
   "showMore": "Mehr anzeigen",
-  "footer": {
-    "rights": "Alle Rechte vorbehalten.",
-    "dataProtection": "Datenschutz"
-  },
   "header": {
     "welcome": "Willkommen bei Ordination Med Dörr",
     "cta": "Jetzt Termin vereinbaren"

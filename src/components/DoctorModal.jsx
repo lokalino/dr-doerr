@@ -3,22 +3,38 @@ import SimpleAppointmentForm from './SimpleAppointmentForm'
 const DoctorModal = ({ open, onClose, title, content }) => {
   if (!open) return null
 
-  const firstLine = content.split('\n')[0]
-  const rest = content.split('\n').slice(1).join('\n')
-
   return (
-    <div className="modal-overlay" onClick={onClose} style={{ zIndex: 1000 }}>
+    <div
+      className="modal-overlay"
+      onClick={onClose}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(0,0,0,0.6)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        zIndex: 1000,
+        overflowY: 'auto',
+        padding: '4rem 1rem'
+      }}
+    >
       <div
         className="modal-content bio-modal"
         onClick={(e) => e.stopPropagation()}
         style={{
           background: '#fff',
           padding: '2rem',
-          maxWidth: 800,
-          width: '90%',
+          maxWidth: '800px',
+          width: '100%',
           borderRadius: '10px',
-          margin: '2rem auto',
-          position: 'relative'
+          position: 'relative',
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+          maxHeight: '90vh',
+          overflowY: 'auto'
         }}
       >
         <button
@@ -37,24 +53,29 @@ const DoctorModal = ({ open, onClose, title, content }) => {
           ✖
         </button>
 
-        <h3>{title}</h3>
-        <h4 className="bio-heading" style={{ fontWeight: 'bold', marginTop: '1rem' }}>{firstLine}</h4>
-        <div className="bio-content" style={{ whiteSpace: 'pre-line', marginBottom: '2rem' }}>{rest}</div>
+        <h3 style={{ color: '#2b3990', marginBottom: '1.5rem' }}>{title}</h3>
 
-        <div style={{ borderTop: '1px solid #ccc', paddingTop: '1rem' }}>
-          <h4 style={{ marginBottom: '1rem' }}>Kontaktformular</h4>
+        <div style={{ whiteSpace: 'pre-line', lineHeight: 1.6 }}>{content}</div>
+
+        {/* Kontakt formular */}
+        <div style={{ borderTop: '1px solid #ccc', paddingTop: '2rem', marginTop: '2rem' }}>
+          <h4 style={{ marginBottom: '1rem', color: '#2b3990' }}>Kontaktformular</h4>
           <SimpleAppointmentForm doctorName={title} />
         </div>
 
-        <div style={{ marginTop: '2rem', textAlign: 'right' }}>
-          <button onClick={onClose} className="modal-close-btn" style={{
-            backgroundColor: '#007bff',
-            color: '#fff',
-            border: 'none',
-            padding: '10px 20px',
-            borderRadius: '6px',
-            cursor: 'pointer'
-          }}>
+        <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+          <button
+            onClick={onClose}
+            className="modal-close-btn"
+            style={{
+              backgroundColor: '#2b3990',
+              color: '#fff',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '6px',
+              cursor: 'pointer'
+            }}
+          >
             Schließen
           </button>
         </div>

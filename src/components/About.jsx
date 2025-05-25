@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import claudiusImg from '../assets/claudius.jpg'
 import katharinaImg from '../assets/katharina.jpg'
 import DoctorModal from './DoctorModal'
+import SimpleAppointmentForm from './SimpleAppointmentForm'
 import claudiusBio from '../data/claudiusBio'
 import katharinaBio from '../data/katharinaBio'
-import SimpleAppointmentForm from './SimpleAppointmentForm'
 import { useTranslation } from 'react-i18next'
 import i18n from '../i18n'
 
@@ -18,14 +18,14 @@ const About = () => {
     {
       id: 'katharina',
       name: 'Priv.-Doz. DDr. Katharina Dörr MBA',
-      short: 'Fachärztin für Innere Medizin, Kardiologie & Nephrologie.',
+      short: t('doctors.katharina') + ': Fachärztin für Innere Medizin, Kardiologie & Nephrologie.',
       img: katharinaImg,
       bio: katharinaBio
     },
     {
       id: 'claudius',
       name: 'DDr. Claudius Dörr MBA',
-      short: 'Facharzt für Anästhesiologie, Intensivmedizin & Schmerztherapie.',
+      short: t('doctors.claudius') + ': Facharzt für Anästhesiologie, Intensivmedizin & Schmerztherapie.',
       img: claudiusImg,
       bio: claudiusBio
     }
@@ -33,7 +33,10 @@ const About = () => {
 
   useEffect(() => {
     const handleKey = (e) => {
-      if (e.key === 'Escape') setEnlargedImg(null)
+      if (e.key === 'Escape') {
+        setEnlargedImg(null)
+        setFormDoctorId(null)
+      }
     }
     window.addEventListener('keydown', handleKey)
     return () => window.removeEventListener('keydown', handleKey)
@@ -59,35 +62,22 @@ const About = () => {
             />
             <h3>{doc.name}</h3>
             <p>{doc.short}</p>
-
             <div className="doctor-buttons">
               <button onClick={() => setOpenModal(doc.id)} className="btn-outline">
-                ℹ️ {t('showMore')}
+                {t('showMore')}
               </button>
               <button
-                onClick={() => {
-                  setFormDoctorId(prev => prev === doc.id ? null : doc.id)
-                  setTimeout(() => {
-                    const el = document.getElementById(`form-${doc.id}`)
-                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                  }, 100)
-                }}
+                onClick={() => setFormDoctorId(doc.id)}
                 className="btn-primary"
               >
-                📅 {formDoctorId === doc.id ? 'Verstecken' : t('form.book')}
+                {t('form.book')}
               </button>
             </div>
-
-            {formDoctorId === doc.id && (
-              <div id={`form-${doc.id}`} style={{ marginTop: '1rem' }}>
-                <SimpleAppointmentForm doctorName={doc.name} onSuccess={() => setFormDoctorId(null)} />
-              </div>
-            )}
           </div>
         ))}
       </div>
 
-      {doctors.map(doc => (
+      {doctors.map((doc) => (
         <DoctorModal
           key={doc.id}
           open={openModal === doc.id}
@@ -97,9 +87,20 @@ const About = () => {
         />
       ))}
 
+      {formDoctorId && (
+        <DoctorModal
+          open={true}
+          onClose={() => setFormDoctorId(null)}
+          title={t('appointmentForm.title') + ' – ' + doctors.find(d => d.id === formDoctorId).name}
+          content={<SimpleAppointmentForm doctorName={doctors.find(d => d.id === formDoctorId).name} onSuccess={() => setFormDoctorId(null)} />}
+        />
+      )}
+
       {enlargedImg && (
         <div className="image-modal-overlay" onClick={() => setEnlargedImg(null)}>
-          <button className="image-modal-close" onClick={() => setEnlargedImg(null)}>✕</button>
+          <button className="image-modal-close" onClick={() => setEnlargedImg(null)}>
+            ✕
+          </button>
           <img src={enlargedImg.src} alt="doctor large" className="image-modal-content" />
           <p className="image-modal-caption">{enlargedImg.name}</p>
         </div>

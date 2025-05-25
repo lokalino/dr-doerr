@@ -24,7 +24,8 @@
   "showMore": "Read more",
   "footer": {
     "rights": "All rights reserved.",
-    "dataProtection": "Data Protection"
+    "dataProtection": "Data Protection",
+    "clinicName": "Ordination Med Dörr"
   },
   "header": {
     "welcome": "Welcome to Ordination Med Dörr",
@@ -46,5 +47,11 @@
     "title": "Appointment Booking",
     "success": "Your appointment request has been submitted successfully.",
     "error": "Please complete all required fields."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email"
   }
 }

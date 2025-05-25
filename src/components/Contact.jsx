@@ -7,20 +7,32 @@ const Contact = () => {
     <section id="contact" data-aos="fade-up">
       <h2>{t('nav.contact')}</h2>
       <div className="contact-info">
-        <p><strong>DDr. Claudius Dörr MBA</strong></p>
-        <p>FA für Anästhesiologie, Intensivmedizin, Schmerztherapie, Akupunktur</p>
+        <p><strong>Ordination Med Dörr</strong></p>
+        <p>
+          FA für Innere Medizin, Kardiologie & Nephrologie, Anästhesiologie,
+          Intensivmedizin, Schmerztherapie, Akupunktur
+        </p>
         <p>Alser Straße 20/7, 1090 Wien</p>
         <p>Tel: +43 (0)1 336 13 36</p>
         <p>Fax: DW 14</p>
-        <p>Email: Dr.ClaudiusDoerr@gmail.com</p>
 
-        <a
-          href="mailto:Dr.ClaudiusDoerr@gmail.com"
-          className="btn-primary"
-          style={{ marginTop: '1rem', display: 'inline-block' }}
-        >
-          {t('contactEmail') || 'E-Mail schreiben'}
-        </a>
+        <p>
+          📧 <strong>Dr. Claudius Dörr:</strong>{' '}
+          <a href="mailto:dr.claudiusdoerr@gmail.com">dr.claudiusdoerr@gmail.com</a>
+        </p>
+        <p>
+          📧 <strong>Dr. Katharina Dörr:</strong>{' '}
+          <a href="mailto:dr.katharinadoerr@gmail.com">dr.katharinadoerr@gmail.com</a>
+        </p>
+
+        <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
+          <a href="mailto:dr.claudiusdoerr@gmail.com" className="btn-outline">
+            {t('form.book')} Dr.Claudius
+          </a>
+          <a href="mailto:dr.katharinadoerr@gmail.com" className="btn-primary">
+            {t('form.book')} Dr.Katharina
+          </a>
+        </div>
       </div>
 
       <div style={{ marginTop: '2rem' }}>

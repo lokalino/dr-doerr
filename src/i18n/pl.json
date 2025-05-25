@@ -24,7 +24,8 @@
   "showMore": "Czytaj więcej",
   "footer": {
     "rights": "Wszelkie prawa zastrzeżone.",
-    "dataProtection": "Ochrona danych"
+    "dataProtection": "Ochrona danych",
+    "clinicName": "Ordynacja Med Dörr"
   },
   "header": {
     "welcome": "Witamy w Ordynacji Med Dörr",
@@ -46,5 +47,11 @@
     "title": "Rejestracja wizyty",
     "success": "Twoje zgłoszenie zostało pomyślnie przesłane.",
     "error": "Proszę uzupełnić wszystkie wymagane pola."
+  },
+  "contact": {
+    "title": "Skontaktuj się z nami",
+    "address": "Adres",
+    "phone": "Telefon",
+    "email": "Email"
   }
 }
