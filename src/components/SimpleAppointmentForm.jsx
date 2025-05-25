@@ -40,12 +40,14 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
 
   const handleSubmit = (e) => {
     const newErrors = validate()
+
     if (Object.keys(newErrors).length > 0) {
       e.preventDefault()
       setErrors(newErrors)
       return
     }
 
+    // Omogući regularan submit ako nema grešaka
     setSuccess(true)
     setShowModal(true)
     setFormData({ name: '', email: '', phone: '', message: '' })
@@ -72,7 +74,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
           borderRadius: '10px'
         }}
       >
-        {/* Hidden fields */}
+        {/* Hidden anti-spam and config fields */}
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://klaudiusandkathi.netlify.app/thank-you" />
         <input type="hidden" name="Doktor" value={doctorName} />
