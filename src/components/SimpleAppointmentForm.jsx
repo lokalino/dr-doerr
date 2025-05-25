@@ -1,17 +1,19 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import SuccessModal from './SuccessModal'
 
 const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
   const { t } = useTranslation()
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: ''
   })
+
   const [errors, setErrors] = useState({})
   const [success, setSuccess] = useState(false)
   const [showModal, setShowModal] = useState(false)
@@ -22,8 +24,9 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
   }
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value || '' })
-    setErrors({ ...errors, [e.target.name]: '' })
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+    setErrors((prev) => ({ ...prev, [name]: '' }))
   }
 
   const validate = () => {
@@ -50,10 +53,6 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
     if (onSuccess) {
       setTimeout(() => {
         onSuccess()
-        const teamSection = document.getElementById('team')
-        if (teamSection) {
-          teamSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }
       }, 3000)
     }
   }
@@ -73,6 +72,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
           borderRadius: '10px'
         }}
       >
+        {/* Hidden fields */}
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://klaudiusandkathi.netlify.app/thank-you" />
         <input type="hidden" name="Doktor" value={doctorName} />
