@@ -1,4 +1,4 @@
-// src/components/ThankYou.jsx
+
 const ThankYou = () => {
     return (
       <section style={{ padding: '4rem 2rem', textAlign: 'center' }}>

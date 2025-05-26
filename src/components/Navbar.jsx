@@ -32,10 +32,17 @@ const Navbar = () => {
       </ul>
 
       <div className="lang-switch">
-        <button onClick={() => switchLanguage('de')} className={i18n.language === 'de' ? 'active' : ''}>DE</button>
-        <button onClick={() => switchLanguage('en')} className={i18n.language === 'en' ? 'active' : ''}>EN</button>
-        <button onClick={() => switchLanguage('pl')} className={i18n.language === 'pl' ? 'active' : ''}>PL</button>
-      </div>
+  <button onClick={() => i18n.changeLanguage('de')} className={i18n.language === 'de' ? 'active' : ''}>
+    <img src="/flags/de.svg" alt="Deutsch" width="30" />
+  </button>
+  <button onClick={() => i18n.changeLanguage('en')} className={i18n.language === 'en' ? 'active' : ''}>
+    <img src="/flags/gb.svg" alt="English" width="30" />
+  </button>
+  <button onClick={() => i18n.changeLanguage('pl')} className={i18n.language === 'pl' ? 'active' : ''}>
+    <img src="/flags/pl.svg" alt="Polski" width="30" />
+  </button>
+</div>
+
     </nav>
   )
 }
