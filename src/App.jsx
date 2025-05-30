@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -16,6 +17,7 @@ import PrivacyModal from './components/PrivacyModal'
 
 function App() {
   const [privacyOpen, setPrivacyOpen] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true })
@@ -39,7 +41,7 @@ function App() {
         </div>
 
         <div id="appointment" data-aos="zoom-in" style={{ maxWidth: 700, margin: '0 auto', padding: '2rem' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '1rem' }}>Kontaktieren Sie uns</h2>
+          <h2 style={{ textAlign: 'center', marginBottom: '1rem' }}>{t('contact.title')}</h2>
           <SimpleAppointmentForm />
         </div>
 
@@ -52,8 +54,9 @@ function App() {
       <button
         className="sticky-appointment-btn"
         onClick={() => document.getElementById("appointment")?.scrollIntoView({ behavior: "smooth" })}
+        aria-label={t('form.book')}
       >
-        Zakaži termin
+        {t('form.book')}
       </button>
 
       <Footer openPrivacy={() => setPrivacyOpen(true)} />
@@ -68,7 +71,7 @@ function App() {
         style={{ background: "#2b3990" }}
         buttonStyle={{ color: "#fff", backgroundColor: "#4e5ee4", borderRadius: "5px" }}
       >
-        Diese Webseite verwendet Cookies, um Ihnen ein optimales Erlebnis zu bieten.
+        {t('cookie')}
       </CookieConsent>
     </>
   )
