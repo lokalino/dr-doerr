@@ -53,5 +53,14 @@
     "address": "Adres",
     "phone": "Telefon",
     "email": "Email"
-  }
+  },
+  "privacyTitle": "Polityka prywatności",
+  "privacyIntro": "Ochrona Twoich danych osobowych jest dla nas bardzo ważna. Twoje dane są przetwarzane wyłącznie na podstawie przepisów prawa (RODO, TKG 2003).",
+  "privacyContactTitle": "Kontakt z nami",
+  "privacyContact": "Jeśli skontaktujesz się z nami za pomocą formularza lub e-maila, Twoje dane zostaną zapisane w celu przetworzenia zapytania. Nie udostępniamy tych danych bez Twojej zgody.",
+  "privacyCookiesTitle": "Cookies",
+  "privacyCookies": "Nasza strona internetowa korzysta z plików cookie, aby zapewnić przyjazne użytkownikowi doświadczenie.",
+  "privacyRightsTitle": "Twoje prawa",
+  "privacyRights": "Masz prawo do dostępu, sprostowania, usunięcia lub sprzeciwu wobec przetwarzania danych. Skargi prosimy kierować do odpowiedniego organu ochrony danych.",
+  "privacyEmail": "Kontakt"
 }

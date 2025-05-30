@@ -23,6 +23,12 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
     'Priv.-Doz. DDr. Katharina Dörr MBA': 'https://formsubmit.co/dr.katharinadoerr@gmail.com'
   }
 
+  const isValidEmail = (email) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+
+  const isValidPhone = (phone) =>
+    /^\+?[0-9\s\-()]{6,20}$/.test(phone)
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
@@ -32,8 +38,12 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
   const validate = () => {
     const newErrors = {}
     if (!formData.name) newErrors.name = t('form.name')
-    if (!formData.email) newErrors.email = t('form.email')
-    if (!formData.phone) newErrors.phone = t('form.phone')
+    if (!formData.email || !isValidEmail(formData.email)) {
+      newErrors.email = t('form.email')
+    }
+    if (!formData.phone || !isValidPhone(formData.phone)) {
+      newErrors.phone = t('form.phone')
+    }
     if (!formData.message) newErrors.message = t('form.message')
     return newErrors
   }
@@ -47,7 +57,7 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
       return
     }
 
-    // Ako nema grešaka, pusti browser da pošalje formu (ne pozivamo e.preventDefault)
+    // Dozvoli slanje ako je sve OK
     setSuccess(true)
     setShowModal(true)
     setFormData({ name: '', email: '', phone: '', message: '' })
@@ -74,7 +84,6 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
           borderRadius: '10px'
         }}
       >
-        {/* Hidden anti-spam and config fields */}
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="https://klaudiusandkathi.netlify.app/thank-you" />
         <input type="hidden" name="Doktor" value={doctorName} />

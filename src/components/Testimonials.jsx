@@ -36,7 +36,7 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" data-aos="fade-up">
-      <h2>{t('nav.testimonials') || 'Patient Feedback'}</h2>
+      <h2>{t('nav.testimonials')}</h2>
       <div className="testimonial-list">
         {displayed.map((item, idx) => (
           <blockquote key={idx} data-aos="fade-in">
@@ -49,8 +49,12 @@ const Testimonials = () => {
         ))}
       </div>
       <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-        <button onClick={() => setShowAll(!showAll)} className="btn-outline">
-          {showAll ? t('showLess') || 'Show less' : t('showMore') || 'Show more'}
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="btn-outline"
+          aria-label={showAll ? t('showLess') : t('showMore')}
+        >
+          {showAll ? t('showLess') : t('showMore')}
         </button>
       </div>
     </section>

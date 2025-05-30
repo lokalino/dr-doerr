@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -12,8 +12,11 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import CookieConsent from 'react-cookie-consent'
 import SimpleAppointmentForm from './components/SimpleAppointmentForm'
+import PrivacyModal from './components/PrivacyModal'
 
 function App() {
+  const [privacyOpen, setPrivacyOpen] = useState(false)
+
   useEffect(() => {
     AOS.init({ duration: 800, once: true })
   }, [])
@@ -53,7 +56,9 @@ function App() {
         Zakaži termin
       </button>
 
-      <Footer />
+      <Footer openPrivacy={() => setPrivacyOpen(true)} />
+      <PrivacyModal isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
+
       <ScrollToTop />
 
       <CookieConsent

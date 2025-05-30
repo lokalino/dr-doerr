@@ -7,6 +7,9 @@ const DoctorModal = ({ open, onClose, title, content }) => {
     <div
       className="modal-overlay"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={title}
       style={{
         position: 'fixed',
         top: 0,
@@ -34,12 +37,16 @@ const DoctorModal = ({ open, onClose, title, content }) => {
           position: 'relative',
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
           maxHeight: '90vh',
-          overflowY: 'auto'
+          overflowY: 'auto',
+          margin: 'auto',
+          marginTop: '3rem',
+          maxWidth: '95vw'
         }}
       >
         <button
           className="close-button"
           onClick={onClose}
+          aria-label="Modal schließen"
           style={{
             position: 'absolute',
             top: '1rem',
@@ -57,7 +64,6 @@ const DoctorModal = ({ open, onClose, title, content }) => {
 
         <div style={{ whiteSpace: 'pre-line', lineHeight: 1.6 }}>{content}</div>
 
-        {/* Kontakt formular */}
         <div style={{ borderTop: '1px solid #ccc', paddingTop: '2rem', marginTop: '2rem' }}>
           <h4 style={{ marginBottom: '1rem', color: '#2b3990' }}>Kontaktformular</h4>
           <SimpleAppointmentForm doctorName={title} />

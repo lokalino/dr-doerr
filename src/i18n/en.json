@@ -53,5 +53,14 @@
     "address": "Address",
     "phone": "Phone",
     "email": "Email"
-  }
+  },
+  "privacyTitle": "Privacy Policy",
+  "privacyIntro": "Protecting your personal data is important to us. Your data is processed exclusively on the basis of legal regulations (GDPR, TKG 2003).",
+  "privacyContactTitle": "Contacting Us",
+  "privacyContact": "If you contact us via form or email, your data will be stored for the purpose of processing the request. We do not share this data without your consent.",
+  "privacyCookiesTitle": "Cookies",
+  "privacyCookies": "Our website uses cookies to provide a user-friendly experience.",
+  "privacyRightsTitle": "Your Rights",
+  "privacyRights": "You have the right to access, correct, delete or object to the processing of your data. Please contact the relevant data protection authority for complaints.",
+  "privacyEmail": "Contact"
 }

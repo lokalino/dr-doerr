@@ -53,5 +53,14 @@
     "title": "Terminbuchung",
     "success": "Ihre Terminanfrage wurde erfolgreich übermittelt.",
     "error": "Bitte alle Pflichtfelder ausfüllen."
-  }
+  },
+  "privacyTitle": "Datenschutzerklärung",
+  "privacyIntro": "Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Ihre Daten werden daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003) verarbeitet.",
+  "privacyContactTitle": "Kontakt mit uns",
+  "privacyContact": "Wenn Sie per Formular auf der Website oder per E-Mail Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen sechs Monate bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
+  "privacyCookiesTitle": "Cookies",
+  "privacyCookies": "Unsere Website verwendet sogenannte Cookies. Dabei handelt es sich um kleine Textdateien, die mit Hilfe des Browsers auf Ihrem Endgerät abgelegt werden. Sie richten keinen Schaden an und ermöglichen eine benutzerfreundliche Nutzung der Seite.",
+  "privacyRightsTitle": "Ihre Rechte",
+  "privacyRights": "Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt, können Sie sich bei der Aufsichtsbehörde beschweren.",
+  "privacyEmail": "Kontakt"
 }

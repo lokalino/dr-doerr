@@ -14,6 +14,12 @@ const Appointment = () => {
 
   const availableTimes = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00']
 
+  const isValidEmail = (email) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+
+  const isValidPhone = (phone) =>
+    /^\+?[0-9\s\-()]{6,20}$/.test(phone)
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
     setErrors({ ...errors, [e.target.name]: '' })
@@ -25,8 +31,8 @@ const Appointment = () => {
     if (!selectedDate) newErrors.date = t('form.chooseDate') || 'Choose a date'
     if (!selectedTime) newErrors.time = t('form.chooseTime') || 'Choose a time'
     if (!formData.name) newErrors.name = t('form.name') || 'Name is required'
-    if (!formData.email) newErrors.email = t('form.email') || 'Email is required'
-    if (!formData.phone) newErrors.phone = t('form.phone') || 'Phone number is required'
+    if (!formData.email || !isValidEmail(formData.email)) newErrors.email = t('form.email') || 'Invalid email'
+    if (!formData.phone || !isValidPhone(formData.phone)) newErrors.phone = t('form.phone') || 'Invalid phone'
     if (!formData.insurance) newErrors.insurance = t('form.insurance') || 'Insurance is required'
     return newErrors
   }
@@ -65,7 +71,7 @@ Time: ${selectedTime}`
         <option value={t('doctors.katharina')}>{t('doctors.katharina')}</option>
         <option value={t('doctors.claudius')}>{t('doctors.claudius')}</option>
       </select>
-      {errors.doctor && <div>{errors.doctor}</div>}
+      {errors.doctor && <div style={{ color: 'red' }}>{errors.doctor}</div>}
 
       <DatePicker
         selected={selectedDate}
@@ -74,7 +80,7 @@ Time: ${selectedTime}`
         dateFormat="dd.MM.yyyy"
         minDate={new Date()}
       />
-      {errors.date && <div>{errors.date}</div>}
+      {errors.date && <div style={{ color: 'red' }}>{errors.date}</div>}
 
       {selectedDate && (
         <>
@@ -84,21 +90,21 @@ Time: ${selectedTime}`
               <option key={time} value={time}>{time}</option>
             ))}
           </select>
-          {errors.time && <div>{errors.time}</div>}
+          {errors.time && <div style={{ color: 'red' }}>{errors.time}</div>}
         </>
       )}
 
       <input type="text" name="name" placeholder={t('form.name')} value={formData.name} onChange={handleChange} />
-      {errors.name && <div>{errors.name}</div>}
+      {errors.name && <div style={{ color: 'red' }}>{errors.name}</div>}
 
       <input type="email" name="email" placeholder={t('form.email')} value={formData.email} onChange={handleChange} />
-      {errors.email && <div>{errors.email}</div>}
+      {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}
 
       <input type="text" name="phone" placeholder={t('form.phone')} value={formData.phone} onChange={handleChange} />
-      {errors.phone && <div>{errors.phone}</div>}
+      {errors.phone && <div style={{ color: 'red' }}>{errors.phone}</div>}
 
       <input type="text" name="insurance" placeholder={t('form.insurance')} value={formData.insurance} onChange={handleChange} />
-      {errors.insurance && <div>{errors.insurance}</div>}
+      {errors.insurance && <div style={{ color: 'red' }}>{errors.insurance}</div>}
 
       <button
         type="submit"
@@ -118,7 +124,7 @@ Time: ${selectedTime}`
 
       {fallbackNotice && (
         <p style={{ color: 'red', marginTop: '1rem' }}>
-          {t('form.noEmailClient') || 'If your email did not open automatically, please send your request manually to ordination@example.com.'}
+          {t('form.noEmailClient')}
         </p>
       )}
     </form>
