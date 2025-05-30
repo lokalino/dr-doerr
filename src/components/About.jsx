@@ -11,7 +11,6 @@ import i18n from '../i18n'
 const About = () => {
   const [openModal, setOpenModal] = useState(null)
   const [formDoctorId, setFormDoctorId] = useState(null)
-  const [enlargedImg, setEnlargedImg] = useState(null)
   const { t } = useTranslation()
 
   const doctors = [
@@ -34,7 +33,6 @@ const About = () => {
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === 'Escape') {
-        setEnlargedImg(null)
         setFormDoctorId(null)
       }
     }
@@ -57,8 +55,8 @@ const About = () => {
             <img
               src={doc.img}
               alt={doc.name}
-              onClick={() => setEnlargedImg({ src: doc.img, name: doc.name })}
-              style={{ cursor: 'zoom-in' }}
+              className="doctor-photo"
+              tabIndex="0"
             />
             <h3>{doc.name}</h3>
             <p>{doc.short}</p>
@@ -94,16 +92,6 @@ const About = () => {
           title={t('appointmentForm.title') + ' – ' + doctors.find(d => d.id === formDoctorId).name}
           content={<SimpleAppointmentForm doctorName={doctors.find(d => d.id === formDoctorId).name} onSuccess={() => setFormDoctorId(null)} />}
         />
-      )}
-
-      {enlargedImg && (
-        <div className="image-modal-overlay" onClick={() => setEnlargedImg(null)}>
-          <button className="image-modal-close" onClick={() => setEnlargedImg(null)}>
-            ✕
-          </button>
-          <img src={enlargedImg.src} alt="doctor large" className="image-modal-content" />
-          <p className="image-modal-caption">{enlargedImg.name}</p>
-        </div>
       )}
     </section>
   )
