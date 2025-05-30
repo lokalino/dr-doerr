@@ -34,7 +34,7 @@ const PrivacyModal = ({ isOpen, onClose }) => {
         <p>{t('privacyRights')}</p>
 
         <p>
-          {t('privacyEmail')}: <strong>ordination@example.com</strong>
+          {t('privacyEmail')}: <strong>dr.claudiusdoerr@gmail.com</strong>
         </p>
       </div>
     </div>

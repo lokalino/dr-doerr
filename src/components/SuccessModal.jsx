@@ -1,3 +1,4 @@
+// src/components/SuccessModal.jsx
 const SuccessModal = ({ open, onClose }) => {
   if (!open) return null
 
@@ -30,9 +31,9 @@ const SuccessModal = ({ open, onClose }) => {
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)'
         }}
       >
-        <h2 style={{ color: '#2b3990', marginBottom: '1rem' }}>Hvala!</h2>
+        <h2 style={{ color: '#2b3990', marginBottom: '1rem' }}>Vielen Dank!</h2>
         <p style={{ marginBottom: '1.5rem' }}>
-          Vaš zahtev za termin je uspešno poslat.
+          Ihre Terminanfrage wurde erfolgreich übermittelt.
         </p>
         <button
           onClick={onClose}
@@ -46,7 +47,7 @@ const SuccessModal = ({ open, onClose }) => {
             cursor: 'pointer'
           }}
         >
-          Zatvori
+          Schließen
         </button>
       </div>
     </div>
