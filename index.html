@@ -5,50 +5,86 @@
     <title>Ordination Dr. Dörr</title>
     <meta name="description" content="Facharztpraxis für Anästhesiologie, Schmerztherapie, Innere Medizin, Kardiologie und Nephrologie in Wien." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VB0LKVFPRN"></script>
+  
+    <!-- Consent Mode V2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied'
+      });
+    </script>
+  
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VB0LKVFPRN"></script>
+    <script>
       gtag('js', new Date());
       gtag('config', 'G-VB0LKVFPRN');
     </script>
-
-    <!-- Open Graph -->
+  
+    <!-- Open Graph & Twitter -->
     <meta property="og:title" content="Ordination Dr. Dörr" />
     <meta property="og:description" content="Ihr Fachärzteteam in Wien" />
     <meta property="og:image" content="/logo.png" />
     <meta property="og:type" content="website" />
-
-    <!-- Icons and Fonts -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ordination Dr. Dörr" />
+    <meta name="twitter:description" content="Fachärzteteam für Innere Medizin, Kardiologie, Schmerztherapie in Wien" />
+    <meta name="twitter:image" content="/logo.png" />
+  
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <meta name="theme-color" content="#2b3990" />
+  
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-
-    <!-- Structured Data -->
+  
+    <!-- Schema.org -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalClinic",
-      "name": "Ordination Dr. Dörr",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Alser Straße 23",
-        "addressLocality": "Wien",
-        "postalCode": "1080",
-        "addressCountry": "AT"
-      },
-      "medicalSpecialty": [
-        "Anesthesia",
-        "PainManagement",
-        "Cardiology",
-        "Nephrology"
-      ],
-      "url": "https://your-netlify-link.netlify.app"
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "Ordination Dr. Dörr",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Alser Straße 23",
+          "addressLocality": "Wien",
+          "postalCode": "1080",
+          "addressCountry": "AT"
+        },
+        "medicalSpecialty": ["Anesthesia", "PainManagement", "Cardiology", "Nephrology"],
+        "url": "https://med-doerr.at"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dr. Katharina Dörr",
+        "jobTitle": "Fachärztin für Innere Medizin",
+        "worksFor": {
+          "@type": "MedicalClinic",
+          "name": "Ordination Med Dörr"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "DDr. Claudius Dörr MBA",
+        "jobTitle": "Facharzt für Anästhesie & Schmerztherapie",
+        "worksFor": {
+          "@type": "MedicalClinic",
+          "name": "Ordination Med Dörr"
+        }
+      }
     </script>
   </head>
+  
 
   <body>
     <div id="root"></div>

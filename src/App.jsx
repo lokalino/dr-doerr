@@ -50,7 +50,6 @@ function App() {
         </div>
       </main>
 
-      {/* Sticky dugme za zakazivanje */}
       <button
         className="sticky-appointment-btn"
         onClick={() => document.getElementById("appointment")?.scrollIntoView({ behavior: "smooth" })}
@@ -70,6 +69,14 @@ function App() {
         cookieName="drdoerrCookie"
         style={{ background: "#2b3990" }}
         buttonStyle={{ color: "#fff", backgroundColor: "#4e5ee4", borderRadius: "5px" }}
+        onAccept={() => {
+          if (typeof gtag === 'function') {
+            gtag('consent', 'update', {
+              'ad_storage': 'granted',
+              'analytics_storage': 'granted'
+            });
+          }
+        }}
       >
         {t('cookie')}
       </CookieConsent>
