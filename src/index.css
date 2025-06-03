@@ -194,9 +194,11 @@ button {
   width: 150px;
   height: 150px;
   object-fit: cover;
+  object-position: top;
   border-radius: 100px;
   margin-bottom: 1rem;
 }
+
 
 /* SERVICES */
 .services {

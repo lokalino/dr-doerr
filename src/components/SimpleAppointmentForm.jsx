@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import SuccessModal from './SuccessModal'
 
-const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
+const SimpleAppointmentForm = ({ doctorName, onSuccess, hideTitle = false }) => {
   const { t } = useTranslation()
 
   const [formData, setFormData] = useState({
@@ -71,6 +71,12 @@ const SimpleAppointmentForm = ({ doctorName, onSuccess }) => {
 
   return (
     <>
+      {!hideTitle && (
+        <h2 style={{ textAlign: 'center', marginBottom: '1rem' }}>
+          {t('appointmentForm.title')}
+        </h2>
+      )}
+
       <form
         onSubmit={handleSubmit}
         action={emailMap[doctorName] || 'https://formsubmit.co/default@example.com'}

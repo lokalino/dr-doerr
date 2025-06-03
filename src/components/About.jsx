@@ -17,14 +17,14 @@ const About = () => {
     {
       id: 'katharina',
       name: 'Priv.-Doz. DDr. Katharina Dörr MBA',
-      short: t('doctors.katharina') + ': Fachärztin für Innere Medizin, Kardiologie & Nephrologie.',
+      short: 'Fachärztin für Innere Medizin, Kardiologie & Nephrologie.',
       img: katharinaImg,
       bio: katharinaBio
     },
     {
       id: 'claudius',
       name: 'DDr. Claudius Dörr MBA',
-      short: t('doctors.claudius') + ': Facharzt für Anästhesiologie, Intensivmedizin & Schmerztherapie.',
+      short: 'Facharzt für Anästhesiologie, Intensivmedizin & Schmerztherapie.',
       img: claudiusImg,
       bio: claudiusBio
     }
@@ -34,6 +34,7 @@ const About = () => {
     const handleKey = (e) => {
       if (e.key === 'Escape') {
         setFormDoctorId(null)
+        setOpenModal(null)
       }
     }
     window.addEventListener('keydown', handleKey)
@@ -90,7 +91,13 @@ const About = () => {
           open={true}
           onClose={() => setFormDoctorId(null)}
           title={t('appointmentForm.title') + ' – ' + doctors.find(d => d.id === formDoctorId).name}
-          content={<SimpleAppointmentForm doctorName={doctors.find(d => d.id === formDoctorId).name} onSuccess={() => setFormDoctorId(null)} />}
+          content={
+            <SimpleAppointmentForm
+              doctorName={doctors.find(d => d.id === formDoctorId).name}
+              onSuccess={() => setFormDoctorId(null)}
+              hideTitle={true}
+            />
+          }
         />
       )}
     </section>

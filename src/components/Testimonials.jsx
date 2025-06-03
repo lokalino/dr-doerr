@@ -32,7 +32,7 @@ const Testimonials = () => {
     setTestimonials(demoTestimonials)
   }, [])
 
-  const displayed = showAll ? testimonials : testimonials.slice(0, 8)
+  const displayed = showAll ? testimonials : testimonials.slice(0, 4)
 
   return (
     <section id="testimonials" data-aos="fade-up">
