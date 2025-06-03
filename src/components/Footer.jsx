@@ -1,22 +1,35 @@
-// src/components/Footer.jsx
 import { useTranslation } from 'react-i18next'
 
-const Footer = ({ openPrivacy }) => {
+const Footer = ({ openPrivacy, openImpressum }) => {
   const { t } = useTranslation()
 
   return (
     <footer>
       <p>© {new Date().getFullYear()} Ordination Dr. Dörr</p>
-      <a
-        href="#"
-        onClick={(e) => {
-          e.preventDefault()
-          openPrivacy()
-        }}
-        style={{ cursor: 'pointer', textDecoration: 'underline' }}
-      >
-        {t('footer.dataProtection')}
-      </a>
+      <div style={{ marginTop: '0.5rem' }}>
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault()
+            openPrivacy()
+          }}
+          style={{ textDecoration: 'underline', marginRight: '1rem' }}
+        >
+          {t('footer.dataProtection')}
+        </a>
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault()
+            openImpressum()
+          }}
+          style={{ textDecoration: 'underline', marginRight: '1rem' }}
+        >
+          Impressum
+        </a>
+       
+          
+      </div>
     </footer>
   )
 }

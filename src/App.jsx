@@ -14,9 +14,11 @@ import ScrollToTop from './components/ScrollToTop'
 import CookieConsent from 'react-cookie-consent'
 import SimpleAppointmentForm from './components/SimpleAppointmentForm'
 import PrivacyModal from './components/PrivacyModal'
+import ImpressumModal from './components/ImpressumModal'
 
 function App() {
   const [privacyOpen, setPrivacyOpen] = useState(false)
+  const [impressumOpen, setImpressumOpen] = useState(false)
   const { t } = useTranslation()
 
   useEffect(() => {
@@ -58,23 +60,56 @@ function App() {
         {t('form.book')}
       </button>
 
-      <Footer openPrivacy={() => setPrivacyOpen(true)} />
+      <Footer
+        openPrivacy={() => setPrivacyOpen(true)}
+        openImpressum={() => setImpressumOpen(true)}
+      />
       <PrivacyModal isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
+      <ImpressumModal isOpen={impressumOpen} onClose={() => setImpressumOpen(false)} />
 
       <ScrollToTop />
 
       <CookieConsent
         location="bottom"
-        buttonText="OK"
         cookieName="drdoerrCookie"
-        style={{ background: "#2b3990" }}
-        buttonStyle={{ color: "#fff", backgroundColor: "#4e5ee4", borderRadius: "5px" }}
+        style={{
+          background: "#2b3990",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "1rem",
+          flexWrap: "wrap",
+        }}
+        buttonText="Prihvatam"
+        buttonStyle={{
+          color: "#fff",
+          backgroundColor: "#4e5ee4",
+          borderRadius: "5px",
+          padding: "0.5rem 1rem",
+          marginRight: "1rem",
+        }}
+        enableDeclineButton
+        declineButtonText="Odbijam"
+        declineButtonStyle={{
+          backgroundColor: "#888",
+          color: "white",
+          borderRadius: "5px",
+          padding: "0.5rem 1rem",
+        }}
         onAccept={() => {
           if (typeof gtag === 'function') {
             gtag('consent', 'update', {
-              'ad_storage': 'granted',
-              'analytics_storage': 'granted'
-            });
+              ad_storage: 'granted',
+              analytics_storage: 'granted',
+            })
+          }
+        }}
+        onDecline={() => {
+          if (typeof gtag === 'function') {
+            gtag('consent', 'update', {
+              ad_storage: 'denied',
+              analytics_storage: 'denied',
+            })
           }
         }}
       >
