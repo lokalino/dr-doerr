@@ -12,8 +12,10 @@ const ImpressumModal = ({ isOpen, onClose }) => {
           Alser Straße 23<br />
           1080 Wien, Österreich</p>
   
-          <p><strong>Telefon:</strong> +43 123 456 789<br />
-          <strong>E-Mail:</strong> ordination@example.com</p>
+          <p><strong>Telefon:</strong> +43 1 336 13 36<br />
+          <strong>E-Mail:</strong> dr.claudiusdoerr@gmail.com
+
+</p>
   
           <p><strong>Berufsbezeichnung:</strong> Fachärzte für Innere Medizin, Kardiologie, Schmerztherapie</p>
           <p><strong>Aufsichtsbehörde:</strong> Ärztekammer für Wien</p>
