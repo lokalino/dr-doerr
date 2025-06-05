@@ -59,7 +59,9 @@
   "privacyContactTitle": "Kontakt z nami",
   "privacyContact": "Jeśli skontaktujesz się z nami za pomocą formularza lub e-maila, Twoje dane zostaną zapisane w celu przetworzenia zapytania. Nie udostępniamy tych danych bez Twojej zgody.",
   "privacyCookiesTitle": "Cookies",
-  "privacyCookies": "Nasza strona internetowa korzysta z plików cookie, aby zapewnić przyjazne użytkownikowi doświadczenie.",
+  "privacyCookies": "Nasza strona internetowa używa tak zwanych plików cookies. Są to małe pliki tekstowe zapisywane na Twoim urządzeniu przez przeglądarkę. Nie wyrządzają szkody i umożliwiają wygodne korzystanie ze strony. Cookies pomagają nam uczynić naszą stronę bardziej przyjazną dla użytkownika, efektywną i bezpieczną.\n\nUżywamy następujących typów plików cookies:\n\n1. Niezbędne cookies – Są konieczne do działania strony, np. do nawigacji lub zapamiętywania ustawień języka. Bez nich strona może nie działać poprawnie.\n\n2. Statystyczne cookies – Pomagają nam anonimowo zbierać i analizować, jak użytkownicy korzystają z naszej strony (np. za pomocą Google Analytics), abyśmy mogli ulepszać nasze usługi.\n\n3. Marketingowe cookies – Służą do wyświetlania treści i reklam dostosowanych do Twoich zainteresowań oraz mierzenia skuteczności kampanii.\n\nPodczas pierwszej wizyty na naszej stronie możesz zdecydować, które kategorie cookies akceptujesz. Twój wybór zostanie zapisany i może być w każdej chwili zmieniony w ustawieniach cookies."
+
+  ,
   "privacyRightsTitle": "Twoje prawa",
   "privacyRights": "Masz prawo do dostępu, sprostowania, usunięcia lub sprzeciwu wobec przetwarzania danych. Skargi prosimy kierować do odpowiedniego organu ochrony danych.",
   "privacyEmail": "Kontakt"

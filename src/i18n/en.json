@@ -59,7 +59,9 @@
   "privacyContactTitle": "Contacting Us",
   "privacyContact": "If you contact us via form or email, your data will be stored for the purpose of processing the request. We do not share this data without your consent.",
   "privacyCookiesTitle": "Cookies",
-  "privacyCookies": "Our website uses cookies to provide a user-friendly experience.",
+  "privacyCookies": "Our website uses so-called cookies. These are small text files stored on your device via your browser. They do no harm and enable user-friendly use of the website. Cookies help us make our website more user-friendly, effective, and secure.\n\nWe use the following types of cookies:\n\n1. Necessary cookies – These are essential for the operation of the website, such as navigation or saving your language preferences. Without these, the website may not function properly.\n\n2. Statistics cookies – These help us anonymously collect and analyze how visitors use our website (e.g., via Google Analytics) so we can improve our services.\n\n3. Marketing cookies – These are used to show you personalized content and advertising tailored to your interests and to measure the effectiveness of campaigns.\n\nWhen visiting our website for the first time, you can choose which categories of cookies to accept. Your selection will be saved and can be changed at any time in the cookie settings."
+
+,
   "privacyRightsTitle": "Your Rights",
   "privacyRights": "You have the right to access, correct, delete or object to the processing of your data. Please contact the relevant data protection authority for complaints.",
   "privacyEmail": "Contact"
