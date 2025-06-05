@@ -80,7 +80,7 @@ function App() {
           padding: "1rem",
           flexWrap: "wrap",
         }}
-        buttonText="Prihvatam"
+        buttonText="Akzeptieren"
         buttonStyle={{
           color: "#fff",
           backgroundColor: "#4e5ee4",
@@ -89,7 +89,7 @@ function App() {
           marginRight: "1rem",
         }}
         enableDeclineButton
-        declineButtonText="Odbijam"
+        declineButtonText="Ablehnen"
         declineButtonStyle={{
           backgroundColor: "#888",
           color: "white",
