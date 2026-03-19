@@ -36,16 +36,16 @@ const Contact = () => {
       </div>
 
       <div style={{ marginTop: '2rem' }}>
-        <iframe
-          title="Ordination Dr. Dörr - Location"
-          src="https://www.google.com/maps/search/Laurenzgasse+9%2FGL1,+1050+Wien/@48.1847356,16.363841,17z?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D"
-          width="100%"
-          height="350"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+      <iframe
+  title="Ordination Dr. Dörr - Location"
+  src="https://www.google.com/maps?q=Laurenzgasse+9,+1050+Wien&output=embed"
+  width="100%"
+  height="350"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
       </div>
     </section>
   )
